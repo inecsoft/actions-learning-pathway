@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['18.x']
+        node: ['20.x']
 
     steps:
       - name: checkout repo
@@ -65,6 +65,7 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
+          enablement: true
       - run: npm install
       - run: npm run build
       - name: upload artifacts
